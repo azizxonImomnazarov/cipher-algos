@@ -2,9 +2,9 @@ package edu.aziko.cipher.algos.vernam;
 
 public class VernamCipher {
 
-    private final byte[] KEY;
+    private final int[] KEY;
 
-    public VernamCipher(byte[] key) {
+    public VernamCipher(int[] key) {
         this.KEY = key;
     }
 
