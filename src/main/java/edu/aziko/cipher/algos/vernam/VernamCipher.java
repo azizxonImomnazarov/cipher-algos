@@ -11,6 +11,10 @@ public class VernamCipher {
         this.KEY = key;
     }
 
+    public VernamCipher(String key) {
+        this.KEY = decodeFromStringToIntStream(key);
+    }
+
     public String crypt(String plainText) {
         return doVernamCipherAlgo(plainText);
     }
