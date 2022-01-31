@@ -1,4 +1,4 @@
-package edu.aziko.cipher.algos.mapper;
+package edu.aziko.cipher.mapper;
 
 import java.util.stream.IntStream;
 
