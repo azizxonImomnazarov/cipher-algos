@@ -1,6 +1,7 @@
 package algos.vernam;
 
 import edu.aziko.cipher.algos.vernam.VernamCipher;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -55,4 +56,9 @@ public class VernamCipherTest {
             assertEquals(plainTextList.get(i), decryptedTextList.get(i));
         }
     }
+
+    @Test
+    @DisplayName("Test doVernamCipherAlgo method")
+    @Disabled // Realize this method
+    public void doVernamCipherAlgo() {}
 }
