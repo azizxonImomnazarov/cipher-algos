@@ -25,7 +25,7 @@ public class VernamCipher {
         int[] cipherTextStream = cipherText.chars().toArray();
         int[] decryptedTextStream = new int[cipherTextStream.length];
         for (int i = 0; i < cipherTextStream.length; i++) {
-            int decryptedValue = cipherTextStream[i] ^ KEY[i];
+            int decryptedValue = cipherTextStream[i] ^ KEY[i % KEY.length];
             decryptedTextStream[i] = decryptedValue;
         }
         String decryptedText = decodeFromIntStreamToString(decryptedTextStream);
