@@ -1,7 +1,8 @@
 package edu.aziko.cipher.algos.vernam;
 
-import static edu.aziko.cipher.algos.mapper.StreamDecoder.decodeFromIntStreamToString;
-import static edu.aziko.cipher.algos.mapper.StreamDecoder.decodeFromStringToIntStream;
+import static edu.aziko.cipher.mapper.StreamDecoder.decodeFromIntStreamToString;
+import static edu.aziko.cipher.mapper.StreamDecoder.decodeFromStringToIntStream;
+import static edu.aziko.cipher.helper.CipherHelper.xor;
 
 public class VernamCipher {
 
@@ -27,8 +28,7 @@ public class VernamCipher {
         int[] intStreamFromText = decodeFromStringToIntStream(text);
         int[] resultStream = new int[intStreamFromText.length];
         for (int i = 0; i < intStreamFromText.length; i++) {
-            int xorValue = intStreamFromText[i] ^ KEY[i % KEY.length];
-            resultStream[i] = xorValue;
+            resultStream[i] = xor(intStreamFromText[i], KEY[i % KEY.length]);
         }
         String resultText = decodeFromIntStreamToString(resultStream);
         return resultText;
