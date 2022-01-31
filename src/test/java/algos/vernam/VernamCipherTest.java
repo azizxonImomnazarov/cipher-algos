@@ -21,4 +21,17 @@ public class VernamCipherTest {
         assertNotNull(cipherText);
         assertEquals(expectedCipherText, cipherText);
     }
+
+    @Test
+    @DisplayName("Test decrypt method")
+    public void decrypt() {
+        String cryptedText = "æ5ï";
+        String expectedCipherText = "KOD";
+
+        VernamCipher vernamCipher = new VernamCipher(new int[]{173, 122, 171});
+        String decryptText = vernamCipher.decrypt(cryptedText);
+
+        assertNotNull(decryptText);
+        assertEquals(expectedCipherText, decryptText);
+    }
 }
