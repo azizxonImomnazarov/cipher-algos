@@ -11,17 +11,14 @@ public class VernamCipher {
     }
 
     public String crypt(String plainText) {
-        byte[] plainTextBytes = plainText.getBytes();
-        int[] cipherTextBytes = new int[plainTextBytes.length];
-        for (int i = 0; i < plainTextBytes.length; i++) {
-            int cipherTextByte = (plainTextBytes[i] ^ KEY[i]);
-            cipherTextBytes[i] = cipherTextByte;
-        }
-        String cipherText = decodeFromIntStreamToString(cipherTextBytes);
-        return cipherText;
+        return doVernamCipherAlgo(plainText);
     }
 
     public String decrypt(String cipherText) {
+        return doVernamCipherAlgo(cipherText);
+    }
+
+    private String doVernamCipherAlgo(String cipherText) {
         int[] cipherTextStream = cipherText.chars().toArray();
         int[] decryptedTextStream = new int[cipherTextStream.length];
         for (int i = 0; i < cipherTextStream.length; i++) {
