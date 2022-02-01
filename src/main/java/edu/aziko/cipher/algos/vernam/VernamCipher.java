@@ -1,10 +1,12 @@
 package edu.aziko.cipher.algos.vernam;
 
+import edu.aziko.cipher.Cipher;
+
 import static edu.aziko.cipher.mapper.StreamDecoder.decodeFromIntStreamToString;
 import static edu.aziko.cipher.mapper.StreamDecoder.decodeFromStringToIntStream;
 import static edu.aziko.cipher.helper.CipherHelper.xor;
 
-public class VernamCipher {
+public class VernamCipher implements Cipher {
 
     private final int[] KEY;
 
