@@ -1,0 +1,4 @@
+# Editor config files
+.idea/
+# Build files
+target/
